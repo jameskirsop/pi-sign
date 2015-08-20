@@ -1,60 +1,56 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en-us">
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Screenly-ose : Screenly OSE -- Digital Signage for the Raspberry Pi" />
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Screenly-ose</title>
+    <meta charset="UTF-8">
+    <title>Pi Sign by jameskirsop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
-
   <body>
+    <section class="page-header">
+      <h1 class="project-name">Pi Sign</h1>
+      <h2 class="project-tagline">Pi Sign -- Digital Signage for the Raspberry Pi</h2>
+      <a href="https://github.com/jameskirsop/pi-sign" class="btn">View on GitHub</a>
+      <a href="https://github.com/jameskirsop/pi-sign/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/jameskirsop/pi-sign/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/wireload/screenly-ose">View on GitHub</a>
+    <section class="main-content">
+      <h1>
+<a id="pi-sign----digital-signage-for-the-raspberry-pi" class="anchor" href="#pi-sign----digital-signage-for-the-raspberry-pi" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pi Sign -- Digital Signage for the Raspberry Pi</h1>
 
-          <h1 id="project_title">Screenly-ose</h1>
-          <h2 id="project_tagline">Screenly OSE -- Digital Signage for the Raspberry Pi</h2>
+<p>Pi Sign is a fork of Wireload's successful Screenly Project.</p>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/wireload/screenly-ose/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/wireload/screenly-ose/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+<p>The current version, located in the development branch, should be consider a beta. It's currently in 'production' use to serve content on displays in an office environment, but there's a still a few kinks to work out.</p>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h1>Screenly OSE -- Digital Signage for the Raspberry Pi</h1>
-
-<p>When we started <a href="http://skarmverket.se">Skarmverket</a>, a small network of public billboards in Sweden, we evaluated many of the existing solutions on the market. Most of them were clunky and/or expensive. A fair number of them ran on Windows and used Adobe Flash. We ended up writing our own solution and used Asus Eee PCs with Linux. </p>
-
-<p>Then the <a href="http://www.raspberrypi.org/">Raspberry Pi</a> came along. Priced at $35, and equipped with everything needed to power a screen. We were immediatelly sold and knew that this was what we wanted to use moving forward. Since we love Open Source, we've decided to release Screenly for free for anyone to use. </p>
-
-<p>The current version should be consider a beta. While we have been running it in the lab without any issues, there might still be issues that we are unaware of at this point. Yet, we wanted to make Screenly available to the vibrant Rasberry Pi community.</p>
-
-<p>Since Screenly was written for the Raspberry Pi from the ground up, we had to make it as lean as possible. </p>
-
-<p>There are many use cases where Screenly can be used, such as:</p>
+<p>There are many use cases where Pi Sign can be used, such as:</p>
 
 <ul>
 <li>Display BI or server dashboards</li>
 <li>Advertisements (in-store or in store-front)</li>
 <li>Internal information boards</li>
 <li>Fancy photo-frame</li>
-</ul><p>A rought video of Screenly in action is available <a href="http://www.youtube.com/watch?v=yjDjEfhspxk">here</a>.</p>
+</ul>
+
+<p>A rought video of Screenly in action is available <a href="http://www.youtube.com/watch?v=yjDjEfhspxk">here</a>.</p>
 
 <p>Screenshots and pictures of Screenly are available <a href="https://picasaweb.google.com/102112347693505491575/Screenly01?authkey=Gv1sRgCNa2qp-j5vWUGQ">here</a>.</p>
 
-<h2>How Screenly works</h2>
+<p>A number of modifications have been made, or are in the pipeline, since the fork from Screenly. These include:</p>
 
-<p>Once installed, Screenly can view images, videos and websites on the screen. You can configure your own playlist, and set the duration for how long each element should be viewed.</p>
+<ul>
+<li>Scheduling of Assets</li>
+<li>A few UI tweaks and updates</li>
+<li>A Shutdown schedule to ensure that the Pi and OS is safely switched off when a display is also scheduled to turn off.</li>
+</ul>
+
+<h2>
+<a id="how-pi-sign-works" class="anchor" href="#how-pi-sign-works" aria-hidden="true"><span class="octicon octicon-link"></span></a>How Pi Sign works</h2>
+
+<p>Once installed, Pi Sign can view images, videos and websites on the screen. You can configure your own playlist, and set the duration for how long each element should be viewed.</p>
 
 <p>Here's how you add content to your Screenly box:</p>
 
@@ -73,27 +69,36 @@
 </ul>
 </li>
 <li>Repeate for all the assets you want to display.</li>
-</ul><p>Note: If you don't have any server where you can make your asset available, you can use <a href="https://www.dropbox.com/help/16/en">public folders</a> in Dropbox. </p>
+</ul>
 
-<h2>Requirements</h2>
+<p>Note: If you don't have any server where you can make your asset available, you can use <a href="https://www.dropbox.com/help/16/en">public folders</a> in Dropbox. </p>
+
+<h2>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h2>
 
 <ul>
-<li>A Raspberry Pi (Model B).</li>
-<li>An SD Card (&gt;2GB).</li>
+<li>A Raspberry Pi 2.</li>
+<li>An SD Card (&gt;4GB).</li>
 <li>A HDMI-cable.</li>
 <li>A network connection (with DHCP).</li>
 <li>A Keyboard and mouse (only required for the installation).</li>
 <li>A monitor/TV that can view full HD (and has HDMI input).</li>
-</ul><h2>Configure the Raspberry Pi</h2>
+</ul>
+
+<h2>
+<a id="configure-the-raspberry-pi" class="anchor" href="#configure-the-raspberry-pi" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configure the Raspberry Pi</h2>
 
 <ul>
 <li>Flash the SD card and install <a href="http://www.raspberrypi.org/downloads">Raspbian Wheezy</a>. Instructions are available <a href="http://elinux.org/RPi_Easy_SD_Card_Setup">here</a>.</li>
 <li>Configure Raspbian to automatically log into X.</li>
 <li>Make sure that the system's clock is configured for the proper timezone.</li>
 <li>Expand the filesystem if needed. </li>
-</ul><p>Please note that Screenly currently relies on the user 'pi', so don't change the username.</p>
+</ul>
 
-<h2>Install Screenly OSE</h2>
+<p>Please note that Screenly currently relies on the user 'pi', so don't change the username.</p>
+
+<h2>
+<a id="install-screenly-ose" class="anchor" href="#install-screenly-ose" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install Screenly OSE</h2>
 
 <p>Open a terminal-window (or SSH-session) and as the user 'pi' run:</p>
 
@@ -108,7 +113,8 @@ git clone git@github.com:wireload/screenly-ose.git ~/screenly
 
 <p>Upon boot, Screenly's URL should show up on the screen (e.g. <a href="http://aaa.bbb.ccc.ddd:8080">http://aaa.bbb.ccc.ddd:8080</a>).</p>
 
-<h2>Supported media</h2>
+<h2>
+<a id="supported-media" class="anchor" href="#supported-media" aria-hidden="true"><span class="octicon octicon-link"></span></a>Supported media</h2>
 
 <p>Screenly currently three types of media:</p>
 
@@ -121,13 +127,16 @@ git clone git@github.com:wireload/screenly-ose.git ~/screenly
 </li>
 <li>Images</li>
 <li>Web-pages</li>
-</ul><p>Adobe Flash-media <em>is not</em> supported. </p>
+</ul>
 
-<p>Images and web-pages will be rendered in 1920x1080, so adjust your content for this size. </p>
+<p>Adobe Flash-media <em>is not</em> supported. </p>
+
+<p>Images and web-pages will be rendered to fill the display constraints - likely to be 1920x1080 on a modern display, so adjust your content for this size. </p>
 
 <p>It is also worth noting that no media is permanently stored on the Raspberry Pi. All content is simply retrieved from the remote server (with limited caching in the browser).</p>
 
-<h2>Upgrade Screenly</h2>
+<h2>
+<a id="upgrade-screenly" class="anchor" href="#upgrade-screenly" aria-hidden="true"><span class="octicon octicon-link"></span></a>Upgrade Screenly</h2>
 
 <p>Since Screenly still is in beta, it's not unlikely that you'll run across bugs.</p>
 
@@ -142,21 +151,19 @@ git pull
 <pre><code>pkill -f "viewer.py"
 </code></pre>
 
-<h2>Licensing</h2>
+<h2>
+<a id="licensing" class="anchor" href="#licensing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Licensing</h2>
 
 <p>Dual License: <a href="http://www.gnu.org/licenses/gpl-2.0.html">GPLv2</a> and Commercial License. For more information, contact <a href="http://wireload.net/company/">WireLoad</a>. </p>
-      </section>
-    </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Screenly-ose maintained by <a href="https://github.com/wireload">wireload</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/jameskirsop/pi-sign">Pi Sign</a> is maintained by <a href="https://github.com/jameskirsop">jameskirsop</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
-    </div>
 
-    
+    </section>
 
+  
   </body>
 </html>
