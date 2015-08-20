@@ -12,7 +12,7 @@
   <body>
     <section class="page-header">
       <h1 class="project-name">Pi Sign</h1>
-      <h2 class="project-tagline">Pi Sign -- Digital Signage for the Raspberry Pi</h2>
+      <h2 class="project-tagline">Pi Sign - Digital Signage for the Raspberry Pi</h2>
       <a href="https://github.com/jameskirsop/pi-sign" class="btn">View on GitHub</a>
       <a href="https://github.com/jameskirsop/pi-sign/zipball/master" class="btn">Download .zip</a>
       <a href="https://github.com/jameskirsop/pi-sign/tarball/master" class="btn">Download .tar.gz</a>
@@ -20,9 +20,9 @@
 
     <section class="main-content">
       <h1>
-<a id="pi-sign----digital-signage-for-the-raspberry-pi" class="anchor" href="#pi-sign----digital-signage-for-the-raspberry-pi" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pi Sign -- Digital Signage for the Raspberry Pi</h1>
+<a id="pi-sign---digital-signage-for-the-raspberry-pi" class="anchor" href="#pi-sign---digital-signage-for-the-raspberry-pi" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pi Sign - Digital Signage for the Raspberry Pi</h1>
 
-<p>Pi Sign is a fork of Wireload's successful Screenly Project.</p>
+<p>Pi Sign is a fork of Wireload's successful <a href="https://github.com/wireload/screenly-ose/">Screenly</a> project.</p>
 
 <p>The current version, located in the development branch, should be consider a beta. It's currently in 'production' use to serve content on displays in an office environment, but there's a still a few kinks to work out.</p>
 
@@ -42,7 +42,7 @@
 <p>A number of modifications have been made, or are in the pipeline, since the fork from Screenly. These include:</p>
 
 <ul>
-<li>Scheduling of Assets</li>
+<li>Proper scheduling of assets</li>
 <li>A few UI tweaks and updates</li>
 <li>A Shutdown schedule to ensure that the Pi and OS is safely switched off when a display is also scheduled to turn off.</li>
 </ul>
@@ -77,7 +77,7 @@
 <a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h2>
 
 <ul>
-<li>A Raspberry Pi 2.</li>
+<li>A Raspberry Pi 2 (it may work on a first generation model B, but I've not tested it).</li>
 <li>An SD Card (&gt;4GB).</li>
 <li>A HDMI-cable.</li>
 <li>A network connection (with DHCP).</li>
@@ -89,34 +89,41 @@
 <a id="configure-the-raspberry-pi" class="anchor" href="#configure-the-raspberry-pi" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configure the Raspberry Pi</h2>
 
 <ul>
-<li>Flash the SD card and install <a href="http://www.raspberrypi.org/downloads">Raspbian Wheezy</a>. Instructions are available <a href="http://elinux.org/RPi_Easy_SD_Card_Setup">here</a>.</li>
-<li>Configure Raspbian to automatically log into X.</li>
+<li>Flash the SD card and install <a href="http://www.raspberrypi.org/downloads">Raspbian</a>. Instructions are available <a href="https://www.raspberrypi.org/documentation/installation/installing-images/README.md">here</a>.</li>
+<li>On first use the Raspi-Config utility to:
+
+<ul>
+<li>Log in to the Desktop</li>
+<li>Expand the file system</li>
+<li>Enable SSH Access</li>
+<li>Adjust the Overscan settings if needed for your display</li>
+</ul>
+</li>
 <li>Make sure that the system's clock is configured for the proper timezone.</li>
-<li>Expand the filesystem if needed. </li>
 </ul>
 
-<p>Please note that Screenly currently relies on the user 'pi', so don't change the username.</p>
+<p>Please note that Pi Sign currently relies on the user 'pi', so don't change the username.</p>
 
 <h2>
-<a id="install-screenly-ose" class="anchor" href="#install-screenly-ose" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install Screenly OSE</h2>
+<a id="install-pi-sign" class="anchor" href="#install-pi-sign" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install Pi Sign</h2>
 
-<p>Open a terminal-window (or SSH-session) and as the user 'pi' run:</p>
+<p>For the current (Development) version open a terminal-window (or SSH-session) and as the user 'pi' run:</p>
 
-<pre><code>cd ~
-sudo apt-get update
-sudo apt-get -y install git-core
-git clone git@github.com:wireload/screenly-ose.git ~/screenly
-~/screenly/misc/install.sh
+<pre><code>curl -sL https://raw.githubusercontent.com/jameskirsop/pi-sign/development/misc/install.sh | bash
+cd ~/pi-sign/
+git fetch
+git checkout development
+./misc/install.sh
 </code></pre>
 
-<p>Assuming everything went well, reboot your system. Screenly should now load. </p>
+<p>Assuming everything went well, reboot your system. Pi Sign should now load.</p>
 
-<p>Upon boot, Screenly's URL should show up on the screen (e.g. <a href="http://aaa.bbb.ccc.ddd:8080">http://aaa.bbb.ccc.ddd:8080</a>).</p>
+<p>Upon boot, Pi Sign's URL should show up on the screen (e.g. <a href="http://aaa.bbb.ccc.ddd:8080">http://aaa.bbb.ccc.ddd:8080</a>).</p>
 
 <h2>
 <a id="supported-media" class="anchor" href="#supported-media" aria-hidden="true"><span class="octicon octicon-link"></span></a>Supported media</h2>
 
-<p>Screenly currently three types of media:</p>
+<p>Pi Sign currently three types of media:</p>
 
 <ul>
 <li>Videos
@@ -136,19 +143,14 @@ git clone git@github.com:wireload/screenly-ose.git ~/screenly
 <p>It is also worth noting that no media is permanently stored on the Raspberry Pi. All content is simply retrieved from the remote server (with limited caching in the browser).</p>
 
 <h2>
-<a id="upgrade-screenly" class="anchor" href="#upgrade-screenly" aria-hidden="true"><span class="octicon octicon-link"></span></a>Upgrade Screenly</h2>
+<a id="upgrade-pi-sign" class="anchor" href="#upgrade-pi-sign" aria-hidden="true"><span class="octicon octicon-link"></span></a>Upgrade Pi Sign</h2>
 
-<p>Since Screenly still is in beta, it's not unlikely that you'll run across bugs.</p>
+<p>Since Pi Sign still is in beta (and you've probably used the instructions above), it's not unlikely that you'll run across bugs.</p>
 
-<p>To upgrade Screenly, simply run (as the user 'pi'):</p>
+<p>To upgrade Pi Sign, simply run (as the user 'pi'):</p>
 
-<pre><code>cd ~/screenly
+<pre><code>cd ~/pi-sign
 git pull
-</code></pre>
-
-<p>Once done, simply restart the computer. If you prefer not to reboot, you might get away with (depending on the update):</p>
-
-<pre><code>pkill -f "viewer.py"
 </code></pre>
 
 <h2>
