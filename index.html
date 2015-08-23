@@ -13,20 +13,20 @@
     <section class="page-header">
       <h1 class="project-name">Pi Sign</h1>
       <h2 class="project-tagline">Pi Sign - Digital Signage for the Raspberry Pi</h2>
-      <a href="https://github.com/jameskirsop/pi-sign" class="btn">View on GitHub</a>
-      <a href="https://github.com/jameskirsop/pi-sign/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/jameskirsop/pi-sign/tarball/master" class="btn">Download .tar.gz</a>
+      <a href="https://github.com/jameskirsop/pisign" class="btn">View on GitHub</a>
+      <a href="https://github.com/jameskirsop/pisign/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/jameskirsop/pisign/tarball/master" class="btn">Download .tar.gz</a>
     </section>
 
     <section class="main-content">
       <h1>
-<a id="pi-sign---digital-signage-for-the-raspberry-pi" class="anchor" href="#pi-sign---digital-signage-for-the-raspberry-pi" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pi Sign - Digital Signage for the Raspberry Pi</h1>
+<a id="Π-pisign---digital-signage-for-the-raspberry-pi" class="anchor" href="#%CE%A0-pisign---digital-signage-for-the-raspberry-pi" aria-hidden="true"><span class="octicon octicon-link"></span></a>Π PiSign - Digital Signage for the Raspberry Pi</h1>
 
-<p>Pi Sign is a fork of Wireload's successful <a href="https://github.com/wireload/screenly-ose/">Screenly</a> project.</p>
+<p>PiSign is a fork of Wireload's successful <a href="https://github.com/wireload/screenly-ose/">Screenly</a> project.</p>
 
 <p>The current version, located in the development branch, should be consider a beta. It's currently in 'production' use to serve content on displays in an office environment, but there's a still a few kinks to work out.</p>
 
-<p>There are many use cases where Pi Sign can be used, such as:</p>
+<p>There are many use cases where PiSign can be used, such as:</p>
 
 <ul>
 <li>Display BI or server dashboards</li>
@@ -52,26 +52,30 @@
 
 <p>Once installed, Pi Sign can view images, videos and websites on the screen. You can configure your own playlist, and set the duration for how long each element should be viewed.</p>
 
-<p>Here's how you add content to your Screenly box:</p>
+<p>Here's how you add content to your PiSign:</p>
 
 <ul>
 <li>Point your browser to the URL displayed on the screen at boot.</li>
-<li>Click 'Add asset.'
+<li>Click 'Add Asset'
 
 <ul>
-<li>Provide a name of the asset, the URL to the asset, and the asset type and click 'Submit.'</li>
+<li>Provide a name of the asset</li>
+<li>For content available online enter the URL to the asset</li>
+<li>You can also upload content (recommended for photos and videos) by clicking on the 'Upload' tab.</li>
+<li>Click 'Submit.'</li>
 </ul>
 </li>
-<li>Click 'Schedule asset.'
+<li>On the newly created Asset click 'Schedule'
 
 <ul>
-<li>Select the asset you just added in the drop-down, select the time frame you wish to display the asset and the duration (if image or website) and press 'Submit.'</li>
+<li>Click 'Add Schedule'</li>
+<li>Schedules can be created for a single use, or can be used to create schedules that reoccur daily, or weekly.</li>
 </ul>
 </li>
-<li>Repeate for all the assets you want to display.</li>
+<li>Once you've added your schedules for the asset, return to the PiSign home page - click the PiSign logo at the top left of your browser window.</li>
+<li>Toggle your new asset to 'On'.</li>
+<li>Repeat for all the assets you want to display.</li>
 </ul>
-
-<p>Note: If you don't have any server where you can make your asset available, you can use <a href="https://www.dropbox.com/help/16/en">public folders</a> in Dropbox. </p>
 
 <h2>
 <a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a>Requirements</h2>
@@ -102,10 +106,10 @@
 <li>Make sure that the system's clock is configured for the proper timezone.</li>
 </ul>
 
-<p>Please note that Pi Sign currently relies on the user 'pi', so don't change the username.</p>
+<p>Please note that PiSign currently relies on the user 'pi', so don't change the username.</p>
 
 <h2>
-<a id="install-pi-sign" class="anchor" href="#install-pi-sign" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install Pi Sign</h2>
+<a id="install-pisign" class="anchor" href="#install-pisign" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install PiSign</h2>
 
 <p>For the current (Development) version open a terminal-window (or SSH-session) and as the user 'pi' run:</p>
 
@@ -116,9 +120,9 @@ git checkout development
 ./misc/install.sh
 </code></pre>
 
-<p>Assuming everything went well, reboot your system. Pi Sign should now load.</p>
+<p>Assuming everything went well, reboot your system. PiSign should now load.</p>
 
-<p>Upon boot, Pi Sign's URL should show up on the screen (e.g. <a href="http://aaa.bbb.ccc.ddd:8080">http://aaa.bbb.ccc.ddd:8080</a>).</p>
+<p>Upon boot, PiSign's URL should show up on the screen (e.g. <a href="http://aaa.bbb.ccc.ddd:8080">http://aaa.bbb.ccc.ddd:8080</a>).</p>
 
 <h2>
 <a id="supported-media" class="anchor" href="#supported-media" aria-hidden="true"><span class="octicon octicon-link"></span></a>Supported media</h2>
@@ -138,18 +142,18 @@ git checkout development
 
 <p>Adobe Flash-media <em>is not</em> supported. </p>
 
-<p>Images and web-pages will be rendered to fill the display constraints - likely to be 1920x1080 on a modern display, so adjust your content for this size. </p>
+<p>Images and web-pages will be rendered to fill the display constraints - likely to be 1920x1080 on a modern display, so adjust your content to have the appropriate proportions/dimensions for your target display. You're able to get the pixel dimensions and aspect ratio of the display attached to your Raspberry Pi by clicking on the 'System Info' button at the top of each page. </p>
 
-<p>It is also worth noting that no media is permanently stored on the Raspberry Pi. All content is simply retrieved from the remote server (with limited caching in the browser).</p>
+<p>It is also worth noting that no web media is permanently stored on the Raspberry Pi. All content is simply retrieved from the remote server (with limited caching in the browser). If you require offline media access, make sure you use the 'Upload' feature mentioned above.</p>
 
 <h2>
-<a id="upgrade-pi-sign" class="anchor" href="#upgrade-pi-sign" aria-hidden="true"><span class="octicon octicon-link"></span></a>Upgrade Pi Sign</h2>
+<a id="upgrade-pisign" class="anchor" href="#upgrade-pisign" aria-hidden="true"><span class="octicon octicon-link"></span></a>Upgrade PiSign</h2>
 
-<p>Since Pi Sign still is in beta (and you've probably used the instructions above), it's not unlikely that you'll run across bugs.</p>
+<p>Since PiSign still is in beta (and you've probably used the instructions above), it's not unlikely that you'll run across bugs.</p>
 
-<p>To upgrade Pi Sign, simply run (as the user 'pi'):</p>
+<p>To upgrade PiSign, simply run (as the user 'pi'):</p>
 
-<pre><code>cd ~/pi-sign
+<pre><code>cd ~/pisign
 git pull
 </code></pre>
 
@@ -159,7 +163,7 @@ git pull
 <p>Dual License: <a href="http://www.gnu.org/licenses/gpl-2.0.html">GPLv2</a> and Commercial License. For more information, contact <a href="http://wireload.net/company/">WireLoad</a>. </p>
 
       <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/jameskirsop/pi-sign">Pi Sign</a> is maintained by <a href="https://github.com/jameskirsop">jameskirsop</a>.</span>
+        <span class="site-footer-owner"><a href="https://github.com/jameskirsop/pisign">Pi Sign</a> is maintained by <a href="https://github.com/jameskirsop">jameskirsop</a>.</span>
 
         <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
